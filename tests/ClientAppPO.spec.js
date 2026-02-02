@@ -1,17 +1,19 @@
 const { test, expect } = require("@playwright/test");
+const { POManager } = require("../pageobjects/POManager");
 
-const { LoginPage } = require("../pageobjects/LoginPage");
-const { DashboardPage } = require("../pageobjects/DashboardPage");
+// const { LoginPage } = require("../pageobjects/LoginPage");
+// const { DashboardPage } = require("../pageobjects/DashboardPage");
 
 test("@Webst Client App login", async ({ page }) => {
+  const poManager = new POManager(page);
   const username = "htindev@gmail.com";
   const password = "Studentpractice#5";
   const productName = "ZARA COAT 3";
   const products = page.locator(".card-body");
-  const loginPage = new LoginPage(page);
+  const loginPage = poManager.getLoginPage();
   await loginPage.goTo();
   await loginPage.validLogin(username, password);
-  const dashboardPage = new DashboardPage(page);
+  const dashboardPage = poManager.getDashboardPage(page);
   await dashboardPage.searchProductAddCart(productName);
   await dashboardPage.navigateToCard();
 

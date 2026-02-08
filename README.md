@@ -1,16 +1,19 @@
 # playwright-e2e-framework
 
+![Playwright](https://img.shields.io/badge/Playwright-Testing-green?logo=playwright)
+![TypeScript](https://img.shields.io/badge/TypeScript-4.x-blue?logo=typescript)
+<!-- ![CI](https://github.com/htinz/playwright-e2e-framework/actions/workflows/playwright.yml/badge.svg) -->
+
 ## Overview
-This repository showcases a scalable end-to-end automation testing framework developed with Playwright using JavaScript and TypeScript. 
-The framework supports comprehensive validation of both frontend and backend systems, ensuring high application quality through reliable and maintainable automated tests. 
-Built with a focus on real-world engineering standards, the project incorporates modular architecture, reusable components, structured test data management, and CI-ready workflows. 
-The framework is designed to accelerate regression cycles, improve defect detection, and support continuous delivery environments.
+This repository demonstrates a scalable end-to-end automation testing framework built with Playwright using JavaScript and TypeScript.
+The framework supports automated validation of both frontend and backend systems, focusing on reliability, maintainability, and real-world testing practices.
+It follows a modular architecture with reusable components, structured test data management, and CI-ready workflows to support efficient regression testing and continuous delivery pipelines.
 
 ## Tech Stack
 - Playwright – End-to-end UI automation  
 - JavaScript / TypeScript – Test scripting  
 - Node.js – Runtime environment  
-- Mocha / Test Runner – Test execution  
+- Playwright Test – Test runner and assertions 
 - Supertest – API testing  
 - Git & GitHub – Version control  
 - HTML Reports – Test reporting  
@@ -18,18 +21,16 @@ The framework is designed to accelerate regression cycles, improve defect detect
 
 ## Framework Architecture
 The automation framework follows a modular and scalable architecture designed to support maintainable and reusable test development.
-Key design patterns and principles implemented:
-- **Page Object Model (POM):** Separates test logic from UI interactions, improving readability and reducing code duplication.
-- **Reusable Utilities:** Common functions such as authentication, test data handling, and configuration are centralized for efficiency.
-- **Environment Configuration:** Supports flexible execution across different environments using configurable settings.
-- **Test Data Management:** Externalized test data enables parameterized and data-driven testing.
-- **API & UI Layer Separation:** Distinct structure for frontend and backend validation ensures better organization and scalability.
-- **Parallel Execution:** Tests are optimized for faster feedback through concurrent execution.
-- **Reporting Integration:** Generates detailed HTML reports for test results and debugging. 
+Key design patterns and principles include:
+- **Page Object Model (POM):** Separates test logic from UI interactions, improving readability and reducing duplication.
+- **Reusable Utilities:** Centralized helpers for authentication, configuration, and common actions
+- **Environment Configuration:** Supports multiple environments through configurable settings
+- **Test Data Management:** Externalized data enables data-driven and parameterized testing
+- **API & UI Layer Separation:** Clear distinction between frontend and backend validation layers
+- **Parallel Execution:** Optimized for faster feedback through concurrent test execution
+- **Reporting Integration:** Generates detailed HTML reports for analysis and debugging 
 
 ## Installation
-Follow the steps below to set up the test automation framework locally.
-
 ### Prerequisites
 Ensure the following tools are installed:
 - Node.js (v18 or higher)
@@ -69,11 +70,45 @@ npm run test:headed
 View HTML report:
 npm run test:report
 
+## Reporting
+The framework generates comprehensive HTML test reports providing visibility into test execution results.
+Reports include:
+- Execution summary  
+- Error traces  
+- Screenshots on failure  
+- Test duration  
+- Step-level insights  
+This helps accelerate debugging and improves overall test reliability.
+
+## CI/CD (Planned)
+Continuous Integration will be implemented using GitHub Actions to automatically execute tests on pull requests and code changes.
+Planned capabilities:
+- Automated test execution  
+- Parallel runs for faster feedback  
+- HTML report generation  
+- Failure notifications  
+This will help ensure consistent quality and support modern DevOps practices.
+
+## Project Structure
+playwright-e2e-framework/
+├── tests/        # UI and API test specifications
+├── pages/        # Page Object Models (POM)
+├── utils/        # Reusable utilities and helpers
+├── test-data/    # Externalized test data
+├── config/       # Environment configurations
+├── reports/      # Generated test reports
+└── package.json  # Project scripts and dependencies
+
 ## Test Coverage
-- UI tests (login, forms, dropdowns, Radio buttons,...)
+- UI tests (login, forms, dropdowns, radio buttons, etc.)
 - API tests
-- Error scenarios
-- Reports
+- Negative and error scenarios
+- HTML reporting
 
-
-
+## Future Improvements
+- CI/CD pipeline integration  
+- Dockerized test execution  
+- Enhanced reporting dashboards  
+- Expanded API coverage  
+- Cross-browser testing  
+- Performance testing integration  

@@ -1,4 +1,4 @@
-# PlaywrightAutomation_01
+# playwright-e2e-framework
 
 ## Overview
 This repository showcases a scalable end-to-end automation testing framework developed with Playwright using JavaScript and TypeScript. 
@@ -42,10 +42,10 @@ git --version
 
 ### Setup Steps
 1. Clone the repository
-git clone https://github.com/htinz/PlaywrightAutomation_01.git
+git clone https://github.com/htinz/playwright-e2e-framework.git
 
 2. Navigate into the project folder
-cd PlaywrightAutomation_01
+cd playwright-e2e-framework
 
 3. Install dependencies
 npm install
